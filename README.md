@@ -4,7 +4,6 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
 
-// Classe que representa a masmorra
 class Dungeon {
     private Room currentRoom;
     private boolean gameOver;
