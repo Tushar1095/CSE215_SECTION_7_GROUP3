@@ -62,8 +62,6 @@ class Dungeon {
         int roomNumber = scanner.nextInt();
         scanner.nextLine(); // Limpa o buffer do scanner
 
-        // Implemente a lógica para mover o jogador para a sala desejada
-        // Certifique-se de verificar se o número da sala é válido
 
         // Exemplo simplificado: mover o jogador para a sala seguinte
         currentRoom = new Room("Sala " + roomNumber);
@@ -103,7 +101,6 @@ class Dungeon {
 
 		System.out.println("Você atacou o inimigo " + enemy.getName() + " e causou " + damageDealt + " de dano.");
 
-		// Verifica se o inimigo foi derrotado
 		if (enemy.isDefeated()) {
 			currentRoom.removeEnemy(enemy);
 			System.out.println("Você derrotou o inimigo " + enemy.getName() + "!");
