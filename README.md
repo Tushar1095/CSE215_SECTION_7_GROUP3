@@ -23,7 +23,6 @@ class Dungeon {
     public void printCurrentRoomInfo() {
         // Exibe informações da sala atual (ex: descrição, inimigos, tesouros, etc.)
         System.out.println("Você está na sala: " + currentRoom.getName());
-        // Implemente a lógica para exibir informações adicionais da sala
     }
     
     public void printActions() {
