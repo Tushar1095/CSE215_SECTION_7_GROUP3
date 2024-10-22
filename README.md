@@ -9,7 +9,7 @@ class Dungeon {
     private boolean gameOver;
     
     public Dungeon() {
-        // Inicializa a masmorra com as salas e configurações iniciais
+       
         // Implemente a lógica de criação das salas, inimigos, armadilhas e tesouros aqui
         currentRoom = new Room("Sala Inicial");
         gameOver = false;
