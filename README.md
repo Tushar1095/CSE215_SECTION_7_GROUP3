@@ -74,7 +74,7 @@ class Dungeon {
 			return;
 		}
 
-		// Exibe os inimigos disponíveis para atacar
+		
 		System.out.println("Inimigos disponíveis para atacar:");
 		for (int i = 0; i < enemies.size(); i++) {
 			System.out.println((i + 1) + ". " + enemies.get(i).getName());
