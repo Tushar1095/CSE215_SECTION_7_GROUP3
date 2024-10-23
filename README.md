@@ -10,7 +10,7 @@ class Dungeon {
     
     public Dungeon() {
        
-        // Implemente a lógica de criação das salas, inimigos, armadilhas e tesouros aqui
+      
         currentRoom = new Room("Sala Inicial");
         gameOver = false;
     }
@@ -20,30 +20,30 @@ class Dungeon {
     }
     
     public void printCurrentRoomInfo() {
-        // Exibe informações da sala atual (ex: descrição, inimigos, tesouros, etc.)
+    
         System.out.println("Você está na sala: " + currentRoom.getName());
     }
     
     public void printActions() {
-        // Exibe as ações disponíveis para o jogador
+
         System.out.println("Escolha uma ação:");
         System.out.println("1. Mover para outra sala");
         System.out.println("2. Atacar inimigo");
         System.out.println("3. Coletar tesouro");
-        // Implemente outras ações disponíveis no jogo
+
     }
     
     public void processAction(String action) {
         // Processa a ação do jogador
         switch (action) {
             case "1":
-                movePlayer(); // Implemente a lógica para mover o jogador para outra sala
+                movePlayer();
                 break;
             case "2":
-                attackEnemy(); // Implemente a lógica para o jogador atacar um inimigo
+                attackEnemy(); 
                 break;
             case "3":
-                collectTreasure(); // Implemente a lógica para o jogador coletar um tesouro
+                collectTreasure(); 
                 break;
             default:
                 System.out.println("Ação inválida!");
