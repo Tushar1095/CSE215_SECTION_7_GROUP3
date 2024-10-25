@@ -14,7 +14,7 @@ class Dungeon {
         currentRoom = new Room("Sala Inicial");
         gameOver = false;
     }
-    
+    x
     public boolean isGameOver() {
         return gameOver;
     }
