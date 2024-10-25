@@ -61,7 +61,6 @@ class Dungeon {
         scanner.nextLine(); // Limpa o buffer do scanner
 
 
-        // Exemplo simplificado: mover o jogador para a sala seguinte
         currentRoom = new Room("Sala " + roomNumber);
     }
 
@@ -93,7 +92,7 @@ class Dungeon {
 		Enemy enemy = enemies.get(enemyNumber - 1);
 		Player player = new Player(100,10); // Supondo que existe uma classe Player
 
-		// Realiza o ataque do jogador ao inimigo
+		
 		int damageDealt = player.attack(enemy);
 		enemy.reduceHealth(damageDealt);
 
@@ -128,21 +127,20 @@ class Dungeon {
         System.out.println("Escolha o número do tesouro para coletar:");
         Scanner scanner = new Scanner(System.in);
         int treasureNumber = scanner.nextInt();
-        scanner.nextLine(); // Limpa o buffer do scanner
-
+        scanner.nextLine();
         if (treasureNumber < 1 || treasureNumber > treasures.size()) {
             System.out.println("Número de tesouro inválido!");
             return;
         }
 
         Treasure treasure = treasures.get(treasureNumber - 1);
-        // Implemente a lógica para o jogador coletar o tesouro selecionado
+        
     }
     
     // ...
 
     public void printGameOverMessage() {
-        // Exibe a mensagem de fim de jogo
+     
         System.out.println("Fim de jogo! Obrigado por jogar!");
     }
 }
