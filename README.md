@@ -51,7 +51,6 @@ class Dungeon {
         }
     }
     
-
     // ...
 
     private void movePlayer() {
@@ -134,7 +133,7 @@ class Dungeon {
         }
 
         Treasure treasure = treasures.get(treasureNumber - 1);
-        
+        ////////////////////////////////////////////////////////
     }
     
     // ...
