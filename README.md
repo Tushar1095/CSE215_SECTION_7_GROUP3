@@ -52,7 +52,7 @@ class Dungeon {
     }
     
     // ...
-
+////////////////////////////////////////////
     private void movePlayer() {
         System.out.println("Digite o número da sala para onde você deseja se mover:");
         Scanner scanner = new Scanner(System.in);
