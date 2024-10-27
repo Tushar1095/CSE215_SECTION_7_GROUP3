@@ -9,12 +9,12 @@ class Dungeon {
     private boolean gameOver;
     
     public Dungeon() {
-       
+                                                                                                                
       
         currentRoom = new Room("Sala Inicial");
         gameOver = false;
     }
-    x
+   
     public boolean isGameOver() {
         return gameOver;
     }
@@ -51,8 +51,7 @@ class Dungeon {
         }
     }
     
-    // ...
-////////////////////////////////////////////
+
     private void movePlayer() {
         System.out.println("Digite o número da sala para onde você deseja se mover:");
         Scanner scanner = new Scanner(System.in);
