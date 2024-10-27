@@ -4,141 +4,130 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
 
-class Dungeon {
+public class Dungeon {
     private Room currentRoom;
     private boolean gameOver;
-    
+
     public Dungeon() {
-                                                                                                                
-      
-        currentRoom = new Room("Sala Inicial");
+        currentRoom = new Room("Starting Room");
         gameOver = false;
     }
-   
+
     public boolean isGameOver() {
         return gameOver;
     }
-    
+
     public void printCurrentRoomInfo() {
-    
-        System.out.println("Você está na sala: " + currentRoom.getName());
+        System.out.println("You are in the room: " + currentRoom.getName());
     }
-    
+
     public void printActions() {
-
-        System.out.println("Escolha uma ação:");
-        System.out.println("1. Mover para outra sala");
-        System.out.println("2. Atacar inimigo");
-        System.out.println("3. Coletar tesouro");
-
+        System.out.println("Choose an action:");
+        System.out.println("1. Move to another room");
+        System.out.println("2. Attack enemy");
+        System.out.println("3. Collect treasure");
     }
-    
+
     public void processAction(String action) {
-        // Processa a ação do jogador
+        // Process the player's action
         switch (action) {
             case "1":
                 movePlayer();
                 break;
             case "2":
-                attackEnemy(); 
+                attackEnemy();
                 break;
             case "3":
-                collectTreasure(); 
+                collectTreasure();
                 break;
             default:
-                System.out.println("Ação inválida!");
+                System.out.println("Invalid action!");
                 break;
         }
     }
-    
 
     private void movePlayer() {
-        System.out.println("Digite o número da sala para onde você deseja se mover:");
+        System.out.println("Enter the room number you want to move to:");
         Scanner scanner = new Scanner(System.in);
         int roomNumber = scanner.nextInt();
-        scanner.nextLine(); // Limpa o buffer do scanner
+        scanner.nextLine(); // Clear the scanner buffer
 
-
-        currentRoom = new Room("Sala " + roomNumber);
+        currentRoom = new Room("Room " + roomNumber);
     }
 
-	private void attackEnemy() {
-		Room currentRoom = getCurrentRoom();
-		List<Enemy> enemies = currentRoom.getEnemies();
+    private void attackEnemy() {
+        Room currentRoom = getCurrentRoom();
+        List<Enemy> enemies = currentRoom.getEnemies();
 
-		if (enemies.isEmpty()) {
-			System.out.println("Não há inimigos nesta sala!");
-			return;
-		}
+        if (enemies.isEmpty()) {
+            System.out.println("There are no enemies in this room!");
+            return;
+        }
 
-		
-		System.out.println("Inimigos disponíveis para atacar:");
-		for (int i = 0; i < enemies.size(); i++) {
-			System.out.println((i + 1) + ". " + enemies.get(i).getName());
-		}
+        System.out.println("Available enemies to attack:");
+        for (int i = 0; i < enemies.size(); i++) {
+            System.out.println((i + 1) + ". " + enemies.get(i).getName());
+        }
 
-		System.out.println("Escolha o número do inimigo para atacar:");
-		Scanner scanner = new Scanner(System.in);
-		int enemyNumber = scanner.nextInt();
-		scanner.nextLine(); // Limpa o buffer do scanner
+        System.out.println("Choose the number of the enemy to attack:");
+        Scanner scanner = new Scanner(System.in);
+        int enemyNumber = scanner.nextInt();
+        scanner.nextLine(); // Clear the scanner buffer
 
-		if (enemyNumber < 1 || enemyNumber > enemies.size()) {
-			System.out.println("Número de inimigo inválido!");
-			return;
-		}
+        if (enemyNumber < 1 || enemyNumber > enemies.size()) {
+            System.out.println("Invalid enemy number!");
+            return;
+        }
 
-		Enemy enemy = enemies.get(enemyNumber - 1);
-		Player player = new Player(100,10); // Supondo que existe uma classe Player
+        Enemy enemy = enemies.get(enemyNumber - 1);
+        Player player = new Player(100, 10); // Assuming there is a Player class
 
-		
-		int damageDealt = player.attack(enemy);
-		enemy.reduceHealth(damageDealt);
+        int damageDealt = player.attack(enemy);
+        enemy.reduceHealth(damageDealt);
 
-		System.out.println("Você atacou o inimigo " + enemy.getName() + " e causou " + damageDealt + " de dano.");
+        System.out.println("You attacked the enemy " + enemy.getName() + " and dealt " + damageDealt + " damage.");
 
-		if (enemy.isDefeated()) {
-			currentRoom.removeEnemy(enemy);
-			System.out.println("Você derrotou o inimigo " + enemy.getName() + "!");
-		}
-	}
+        if (enemy.isDefeated()) {
+            currentRoom.removeEnemy(enemy);
+            System.out.println("You defeated the enemy " + enemy.getName() + "!");
+        }
+    }
 
     private Room getCurrentRoom() {
         return this.currentRoom;
     }
-
 
     private void collectTreasure() {
         Room currentRoom = getCurrentRoom();
         List<Treasure> treasures = currentRoom.getTreasures();
 
         if (treasures.isEmpty()) {
-            System.out.println("Não há tesouros nesta sala!");
+            System.out.println("There are no treasures in this room!");
             return;
         }
 
-        // Exibe os tesouros disponíveis para coletar
-        System.out.println("Tesouros disponíveis para coletar:");
+        // Display the available treasures to collect
+        System.out.println("Available treasures to collect:");
         for (int i = 0; i < treasures.size(); i++) {
             System.out.println((i + 1) + ". " + treasures.get(i).getName());
         }
 
-        System.out.println("Escolha o número do tesouro para coletar:");
+        System.out.println("Choose the number of the treasure to collect:");
         Scanner scanner = new Scanner(System.in);
         int treasureNumber = scanner.nextInt();
-        scanner.nextLine();
+        scanner.nextLine(); // Clear the scanner buffer
+
         if (treasureNumber < 1 || treasureNumber > treasures.size()) {
-            System.out.println("Número de tesouro inválido!");
+            System.out.println("Invalid treasure number!");
             return;
         }
 
         Treasure treasure = treasures.get(treasureNumber - 1);
-        ////////////////////////////////////////////////////////
+        // Code to collect the treasure should be added here
     }
-    
-    // ...
 
     public void printGameOverMessage() {
-     
-        System.out.println("Fim de jogo! Obrigado por jogar!");
+        System.out.println("Game over! Thank you for playing!");
     }
 }
+
