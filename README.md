@@ -127,7 +127,8 @@ public class Dungeon {
     }
 
     public void printGameOverMessage() {
-        System.out.println("Game over! Thank you for playing!");
+        System.out.println("Game over! Thank you for playing!");  
+        
     }
 }
 
