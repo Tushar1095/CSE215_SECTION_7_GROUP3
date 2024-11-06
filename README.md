@@ -230,7 +230,7 @@ class Enemy {
         return this.attackDamage;
     }
 
-    public void reduceHealth(int damage) {
+    public void reduceHealth(int damage) { 
         this.health -= damage;
     }
 
