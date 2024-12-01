@@ -17,7 +17,7 @@
 1. **Clone the repository** to your local machine:
    ```bash
    git clone https://github.com/yourusername/dungeon-quest.git
-   2. **Open the project** in your preferred Java IDE (e.g., IntelliJ IDEA, Eclipse).
+   2. **Open the project** in your preferred Java IDE (IntelliJ)
 3. **Navigate to the `Main.java`** file.
 4. **Run the project**: This will launch the game window.
 5. **Follow the instructions** displayed in the game window to play the game.
