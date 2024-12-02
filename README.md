@@ -11,11 +11,13 @@
   - **Inheritance**: Shared behaviors are abstracted into base classes and inherited by specialized classes.
   - **Polymorphism**: The game’s random events and player actions are dynamically processed through polymorphic methods.
 - **Exception Handling**: Ensures the game can handle invalid user inputs and prevents crashes by catching errors gracefully.
-  
+
 ## How to Use
 
 1. **Clone the repository** to your local machine:
    ```bash
+   git clone https://github.com/yourusername/dungeon-quest.git
+
    git clone https://github.com/yourusername/dungeon-quest.git
 2. **Open the project** in your Java IDE (IntelliJ)
 3. **Navigate to the `Main.java`** file.
