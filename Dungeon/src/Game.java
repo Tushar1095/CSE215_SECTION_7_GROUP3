@@ -12,7 +12,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-public class Game {
+public class Game { 
+    //Encapsulation
 
     JFrame window;
     Container con;
@@ -47,10 +48,10 @@ public class Game {
         window.setIconImage(logo.getImage());
         con = window.getContentPane();
 
-      class TitleScreenHandler implements ActionListener {
+      class TitleScreenHandler implements ActionListener { //Nested Class and inheritance
             @Override
-            public void actionPerformed(ActionEvent event) {
-                try {
+            public void actionPerformed(ActionEvent event) { // Polymerphism
+                try { //Exception Handling
                     createGameScreen();
                 } catch (Exception e) {
                     System.err.println("Error during title screen handling: " + e.getMessage());
@@ -67,10 +68,10 @@ public class Game {
         titleNameLabel.setForeground(Color.white);
         titleNameLabel.setFont(titleFont);
 
-        class ChoiceHandler implements ActionListener {
+        class ChoiceHandler implements ActionListener { //Nested class and inheritance
             @Override
-            public void actionPerformed(ActionEvent event) {
-                try {
+            public void actionPerformed(ActionEvent event) { //// Polymerphism
+                try { 
                     String command = event.getActionCommand();
 
                     if (command.equals("c1")) {
